@@ -2,8 +2,16 @@ import { useEffect, useState, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Heart, Share2, Shuffle } from "lucide-react";
 
-// Two free, no-key APIs so "Explore" always has fresh, non-curated content
+// Free, no-key APIs so "Explore" always has fresh, non-curated content
 // on top of the hand-picked deck on the Today tab.
+//
+// NOTE on CORS / keys:
+// - zenquotes.io only sends Access-Control-Allow-Origin on paid plans, so a
+//   direct browser fetch can get blocked by CORS depending on your origin.
+//   If that happens for you, route it through your own tiny proxy/serverless
+//   function instead of calling it straight from the client.
+// - APIRobots' Affirmations API (apirobots.pro) requires a paid subscription
+//   key. It's wired up below but disabled until you add your own key.
 const SOURCES = {
   affirmations: {
     label: "Affirmations",
@@ -25,12 +33,71 @@ const SOURCES = {
       return { text: data.quote, author: data.author };
     },
   },
+  zenquotes: {
+    label: "Zen Quotes",
+    emoji: "🧘",
+    fetcher: async () => {
+      const res = await fetch("https://zenquotes.io/api/random");
+      if (!res.ok) throw new Error("network");
+      const data = await res.json();
+      const first = Array.isArray(data) ? data[0] : data;
+      return { text: first.q, author: first.a };
+    },
+  },
+  advice: {
+    label: "Advice",
+    emoji: "🎯",
+    fetcher: async () => {
+      const res = await fetch("https://api.adviceslip.com/advice");
+      if (!res.ok) throw new Error("network");
+      const data = await res.json();
+      return { text: data.slip.advice, author: null };
+    },
+  },
+  chucknorris: {
+    label: "Chuck Norris",
+    emoji: "🥋",
+    fetcher: async () => {
+      const res = await fetch("https://api.chucknorris.io/jokes/random");
+      if (!res.ok) throw new Error("network");
+      const data = await res.json();
+      return { text: data.value, author: null };
+    },
+  },
+  dadjokes: {
+    label: "Dad Jokes",
+    emoji: "😂",
+    fetcher: async () => {
+      const res = await fetch("https://icanhazdadjoke.com/", {
+        headers: { Accept: "application/json" },
+      });
+      if (!res.ok) throw new Error("network");
+      const data = await res.json();
+      return { text: data.joke, author: null };
+    },
+  },
+  affirmationsPro: {
+    label: "Affirmations+",
+    emoji: "✨",
+    fetcher: async () => {
+      // Requires a paid APIRobots subscription key — see apirobots.pro/apis/new-affirmations-api/
+      const API_KEY = ""; // <-- add your APIRobots key here
+      if (!API_KEY) throw new Error("missing-key");
+      const res = await fetch("https://apirobots.pro/v1/affirmations/random", {
+        headers: { "X-Api-Key": API_KEY },
+      });
+      if (!res.ok) throw new Error("network");
+      const data = await res.json();
+      return { text: data.text, author: null };
+    },
+  },
 };
 
 export default function Other({ isFavorited, toggleFavorite, shareAffirmation }) {
   const [source, setSource] = useState("affirmations");
   const [current, setCurrent] = useState(null);
   const [status, setStatus] = useState("loading"); // loading | ready | error
+  const [errorMsg, setErrorMsg] = useState("");
 
   const fetchOne = useCallback(async (key) => {
     setStatus("loading");
@@ -43,7 +110,12 @@ export default function Other({ isFavorited, toggleFavorite, shareAffirmation })
         author: result.author,
       });
       setStatus("ready");
-    } catch {
+    } catch (err) {
+      setErrorMsg(
+        err?.message === "missing-key"
+          ? "This category needs an API key. Add yours in Other.jsx (SOURCES.affirmationsPro)."
+          : "Couldn't reach that one. Check your connection and try again."
+      );
       setStatus("error");
     }
   }, []);
@@ -95,7 +167,7 @@ export default function Other({ isFavorited, toggleFavorite, shareAffirmation })
                 exit={{ opacity: 0 }}
                 className="error-box"
               >
-                <p>Couldn't reach that one. Check your connection and try again.</p>
+                <p>{errorMsg}</p>
                 <button
                   className="btn tonal"
                   type="button"
