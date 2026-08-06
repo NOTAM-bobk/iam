@@ -15,6 +15,9 @@ export const CATEGORIES = [
   { id: "selflove", label: "Self-Love", emoji: "💗", color: "#FF6F91" },
   { id: "success", label: "Success", emoji: "🚀", color: "#448AFF" },
   { id: "resilience", label: "Resilience", emoji: "🔥", color: "#FF7043" },
+  { id: "focus", label: "Focus", emoji: "🧠", color: "#9C27B0" },
+  { id: "joy", label: "Joy", emoji: "✨", color: "#FFCA28" },
+  { id: "creativity", label: "Creativity", emoji: "🎨", color: "#E91E63" },
 ];
 
 export const AFFIRMATIONS = [
@@ -61,6 +64,11 @@ export const AFFIRMATIONS = [
   { id: "c38", category: "confidence", text: "I celebrate my strengths and acknowledge my growth." },
   { id: "c39", category: "confidence", text: "I belong wherever I choose to be." },
   { id: "c40", category: "confidence", text: "I step into my power today and every day." },
+  { id: "c41", category: "confidence", text: "I am constantly amazed by my own courage." },
+  { id: "c42", category: "confidence", text: "My confidence inspires those around me." },
+  { id: "c43", category: "confidence", text: "I embrace my uniqueness with total pride." },
+  { id: "c44", category: "confidence", text: "I trust my inner voice above all others." },
+  { id: "c45", category: "confidence", text: "I am ready to show the world what I can do." },
 
   // ───────────────────────────────────────────────────────────────────────
   // CALM
@@ -105,6 +113,11 @@ export const AFFIRMATIONS = [
   { id: "l38", category: "calm", text: "I allow myself to simply exist." },
   { id: "l39", category: "calm", text: "I find comfort in the rhythm of my own breathing." },
   { id: "l40", category: "calm", text: "I am deeply relaxed and wonderfully calm." },
+  { id: "l41", category: "calm", text: "I let the quiet wash over me like a gentle wave." },
+  { id: "l42", category: "calm", text: "My mind is a safe and peaceful place to be." },
+  { id: "l43", category: "calm", text: "I gently release all my worries to the wind." },
+  { id: "l44", category: "calm", text: "I choose to be kind and gentle with my thoughts." },
+  { id: "l45", category: "calm", text: "Everything is okay in this very second." },
 
   // ───────────────────────────────────────────────────────────────────────
   // GRATITUDE
@@ -149,6 +162,11 @@ export const AFFIRMATIONS = [
   { id: "g38", category: "gratitude", text: "I am thankful for the small comforts that bring me joy." },
   { id: "g39", category: "gratitude", text: "I appreciate the privilege of simply being alive." },
   { id: "g40", category: "gratitude", text: "My heart is full of gratitude for the abundance around me." },
+  { id: "g41", category: "gratitude", text: "I am thankful for the chance to learn and grow today." },
+  { id: "g42", category: "gratitude", text: "I find something to be thankful for in every situation." },
+  { id: "g43", category: "gratitude", text: "I deeply appreciate the people who make me smile." },
+  { id: "g44", category: "gratitude", text: "My life is full of wonderful moments waiting to be noticed." },
+  { id: "g45", category: "gratitude", text: "I say thank you for the strength I have built." },
 
   // ───────────────────────────────────────────────────────────────────────
   // SELF-LOVE
@@ -193,6 +211,11 @@ export const AFFIRMATIONS = [
   { id: "s38", category: "selflove", text: "I am writing a beautiful story for myself." },
   { id: "s39", category: "selflove", text: "I deserve to enjoy the fruits of my labor." },
   { id: "s40", category: "selflove", text: "My love for myself is unconditional." },
+  { id: "s41", category: "selflove", text: "I am worthy of all the good things life has to offer." },
+  { id: "s42", category: "selflove", text: "I embrace my journey and love who I am becoming." },
+  { id: "s43", category: "selflove", text: "My self-care is a priority, not an option." },
+  { id: "s44", category: "selflove", text: "I am my own best friend and greatest supporter." },
+  { id: "s45", category: "selflove", text: "I shower myself with compassion and kindness." },
 
   // ───────────────────────────────────────────────────────────────────────
   // SUCCESS
@@ -237,6 +260,11 @@ export const AFFIRMATIONS = [
   { id: "u38", category: "success", text: "My potential is limitless." },
   { id: "u39", category: "success", text: "I possess a wealth of knowledge and expertise." },
   { id: "u40", category: "success", text: "I am achieving greatness on my own timeline." },
+  { id: "u41", category: "success", text: "I turn challenges into stepping stones." },
+  { id: "u42", category: "success", text: "Every day brings me closer to my goals." },
+  { id: "u43", category: "success", text: "I am capable of reaching heights I once only dreamed of." },
+  { id: "u44", category: "success", text: "I trust my vision and stay dedicated to my path." },
+  { id: "u45", category: "success", text: "Success flows to me effortlessly and naturally." },
 
   // ───────────────────────────────────────────────────────────────────────
   // RESILIENCE
@@ -281,4 +309,81 @@ export const AFFIRMATIONS = [
   { id: "r38", category: "resilience", text: "I allow failure to be a teacher, not an enemy." },
   { id: "r39", category: "resilience", text: "I honor my struggles and celebrate my endurance." },
   { id: "r40", category: "resilience", text: "I have an infinite capacity to overcome." },
+  { id: "r41", category: "resilience", text: "I have the power to rise above any obstacle." },
+  { id: "r42", category: "resilience", text: "My strength grows with every challenge I face." },
+  { id: "r43", category: "resilience", text: "I bounce back quickly and with renewed energy." },
+  { id: "r44", category: "resilience", text: "I am a beacon of perseverance and hope." },
+  { id: "r45", category: "resilience", text: "Nothing can dim the light that shines from within me." },
+
+  // ───────────────────────────────────────────────────────────────────────
+  // FOCUS
+  // ───────────────────────────────────────────────────────────────────────
+  { id: "f1", category: "focus", text: "My mind is sharp and ready to learn." },
+  { id: "f2", category: "focus", text: "I can tackle one task at a time with clarity." },
+  { id: "f3", category: "focus", text: "Learning new things makes my brain stronger." },
+  { id: "f4", category: "focus", text: "I am focused, motivated, and ready to do my best." },
+  { id: "f5", category: "focus", text: "Challenges help me grow." },
+  { id: "f6", category: "focus", text: "I am in charge of my attention." },
+  { id: "f7", category: "focus", text: "My thoughts are organized and clear." },
+  { id: "f8", category: "focus", text: "I am capable of deeply understanding new ideas." },
+  { id: "f9", category: "focus", text: "Step by step, I am mastering my goals." },
+  { id: "f10", category: "focus", text: "I embrace the process of learning." },
+  { id: "f11", category: "focus", text: "I give my full attention to the present moment." },
+  { id: "f12", category: "focus", text: "It is okay if I don't know the answer right away." },
+  { id: "f13", category: "focus", text: "I am getting better and smarter every day." },
+  { id: "f14", category: "focus", text: "I have the discipline to reach my targets." },
+  { id: "f15", category: "focus", text: "I can do hard things if I take my time." },
+  { id: "f16", category: "focus", text: "I am building healthy habits for my mind." },
+  { id: "f17", category: "focus", text: "My potential to learn is limitless." },
+  { id: "f18", category: "focus", text: "I block out distractions with ease." },
+  { id: "f19", category: "focus", text: "I am proud of the effort I put into my work." },
+  { id: "f20", category: "focus", text: "I ask questions because I want to grow." },
+
+  // ───────────────────────────────────────────────────────────────────────
+  // JOY
+  // ───────────────────────────────────────────────────────────────────────
+  { id: "j1", category: "joy", text: "I choose to look for the good in today." },
+  { id: "j2", category: "joy", text: "My smile can light up a room." },
+  { id: "j3", category: "joy", text: "I deserve to feel happy and carefree." },
+  { id: "j4", category: "joy", text: "I find joy in the little things." },
+  { id: "j5", category: "joy", text: "My heart is open to wonderful surprises today." },
+  { id: "j6", category: "joy", text: "I radiate positive energy to those around me." },
+  { id: "j7", category: "joy", text: "I am creating a life that feels good on the inside." },
+  { id: "j8", category: "joy", text: "Laughter is my favorite way to recharge." },
+  { id: "j9", category: "joy", text: "I attract kind and uplifting people." },
+  { id: "j10", category: "joy", text: "I am allowed to have fun and be playful." },
+  { id: "j11", category: "joy", text: "Joy is my natural state of being." },
+  { id: "j12", category: "joy", text: "I celebrate the happiness of others." },
+  { id: "j13", category: "joy", text: "Today is a great day to have a great day." },
+  { id: "j14", category: "joy", text: "I let go of worry and invite in joy." },
+  { id: "j15", category: "joy", text: "My happiness comes from within." },
+  { id: "j16", category: "joy", text: "I sprinkle kindness everywhere I go." },
+  { id: "j17", category: "joy", text: "I focus on thoughts that make me feel good." },
+  { id: "j18", category: "joy", text: "I am a positive force in the world." },
+  { id: "j19", category: "joy", text: "I embrace the magic of everyday moments." },
+  { id: "j20", category: "joy", text: "I am worthy of all the good things happening to me." },
+
+  // ───────────────────────────────────────────────────────────────────────
+  // CREATIVITY
+  // ───────────────────────────────────────────────────────────────────────
+  { id: "cr1", category: "creativity", text: "My imagination is a powerful tool." },
+  { id: "cr2", category: "creativity", text: "I have unique ideas that are worth sharing." },
+  { id: "cr3", category: "creativity", text: "I give myself permission to make art just for fun." },
+  { id: "cr4", category: "creativity", text: "There are no mistakes in my creative process." },
+  { id: "cr5", category: "creativity", text: "I see the world through a colorful lens." },
+  { id: "cr6", category: "creativity", text: "I am an original thinker." },
+  { id: "cr7", category: "creativity", text: "My creativity flows effortlessly." },
+  { id: "cr8", category: "creativity", text: "I trust my intuition to guide my expression." },
+  { id: "cr9", category: "creativity", text: "I express myself freely and boldly." },
+  { id: "cr10", category: "creativity", text: "My voice and my vision matter." },
+  { id: "cr11", category: "creativity", text: "I am inspired by the beauty around me." },
+  { id: "cr12", category: "creativity", text: "I turn my dreams into reality." },
+  { id: "cr13", category: "creativity", text: "I am a creator, and my canvas is life." },
+  { id: "cr14", category: "creativity", text: "I explore new ideas with curiosity." },
+  { id: "cr15", category: "creativity", text: "It is safe for me to be different." },
+  { id: "cr16", category: "creativity", text: "I celebrate my unique talents." },
+  { id: "cr17", category: "creativity", text: "Thinking outside the box comes naturally to me." },
+  { id: "cr18", category: "creativity", text: "Every day brings a chance to invent something new." },
+  { id: "cr19", category: "creativity", text: "I am proud of the things I make." },
+  { id: "cr20", category: "creativity", text: "I allow my mind to wander and dream." },
 ];
